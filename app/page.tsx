@@ -34,7 +34,7 @@ export default function Home() {
   const openBooking = () => {
     window.BookNow?.open({
       apiKey: "dC2ZGNtPhd110G876989Jj825061dW89",
-      serviceTags: "EventTag",
+      serviceTags: "rennai_gala_summer_event_180",
     });
   };
 

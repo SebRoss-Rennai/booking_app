@@ -16,7 +16,7 @@ export default function RootLayout({
         <Script
           id="booknowlib"
           src="https://www.booxi.com/booknow/booknow.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
       </head>
       <body>{children}</body>
