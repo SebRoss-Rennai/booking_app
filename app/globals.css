@@ -87,14 +87,14 @@ main {
 }
 
 .eyebrow {
-  font-size: 24px;
+  font-size: 20px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #8a6f3b;
   margin-bottom: 1rem;
   max-width: none;
   flex: 0 0 auto;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .hero-image {
