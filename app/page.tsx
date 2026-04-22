@@ -19,13 +19,13 @@ const COPY: Record<
   { eyebrow: string; title: string; subtitle: string; cta: string }
 > = {
   fr: {
-    eyebrow: "Rennaï Réserve présente L’été en éclat",
+    eyebrow: "Rennaï réserve présente l’été en éclat",
     title: "Réservez votre rendez-vous",
     subtitle: "Cliquez sur le bouton ci-dessous pour ouvrir l’outil de réservation.",
     cta: "Réserver maintenant",
   },
   en: {
-    eyebrow: "Rennaï Réserve presents Summer Glow",
+    eyebrow: "Rennaï réserve presents Summer Glow",
     title: "Book your appointment",
     subtitle: "Click the button below to open the booking tool.",
     cta: "Book Now",
