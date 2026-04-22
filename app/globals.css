@@ -87,7 +87,7 @@ main {
 }
 
 .eyebrow {
-  font-size: clamp(1.25rem, 2.6vw, 2rem);
+  font-size: 24px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #8a6f3b;
