@@ -7,7 +7,11 @@ import { motion, AnimatePresence } from "framer-motion";
 declare global {
   interface Window {
     BookNow?: {
-      open: (opts: { apiKey: string; serviceTags?: string }) => void;
+      open: (opts: {
+        apiKey: string;
+        serviceTags?: string;
+        language?: string;
+      }) => void;
     };
   }
 }
@@ -40,6 +44,7 @@ export default function Home() {
     window.BookNow?.open({
       apiKey: "dC2ZGNtPhd110G876989Jj825061dW89",
       serviceTags: "rennai_gala_summer_event_180",
+      language: lang,
     });
   };
 
