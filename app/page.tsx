@@ -14,13 +14,18 @@ declare global {
 
 type Lang = "fr" | "en";
 
-const COPY: Record<Lang, { title: string; subtitle: string; cta: string }> = {
+const COPY: Record<
+  Lang,
+  { eyebrow: string; title: string; subtitle: string; cta: string }
+> = {
   fr: {
+    eyebrow: "Rennaï Réserve présente L’été en éclat",
     title: "Réservez votre rendez-vous",
     subtitle: "Cliquez sur le bouton ci-dessous pour ouvrir l’outil de réservation.",
     cta: "Réserver maintenant",
   },
   en: {
+    eyebrow: "Rennaï Réserve presents Summer Glow",
     title: "Book your appointment",
     subtitle: "Click the button below to open the booking tool.",
     cta: "Book Now",
@@ -97,17 +102,39 @@ export default function Home() {
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
           >
+            <motion.p
+              className="eyebrow"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.05, duration: 0.5 }}
+            >
+              {t.eyebrow}
+            </motion.p>
+            <motion.div
+              className="hero-image"
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <Image
+                src="/rennai_reserve_image.jpg"
+                alt={t.eyebrow}
+                width={900}
+                height={500}
+                priority
+              />
+            </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
             >
               {t.title}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
             >
               {t.subtitle}
             </motion.p>
@@ -116,7 +143,7 @@ export default function Home() {
               onClick={openBooking}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.35, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ delay: 0.45, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.97 }}
             >
