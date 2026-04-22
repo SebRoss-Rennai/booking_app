@@ -6,10 +6,15 @@
 
 html, body {
   height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: var(--font-raleway), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 300;
   background: #f7f7f8;
   color: #111;
+}
+
+h1, h2, h3, p {
+  font-weight: 300;
 }
 
 .site-header {
@@ -47,10 +52,11 @@ html, body {
   border: 0;
   padding: 0.4rem 0.9rem;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.04em;
   cursor: pointer;
   transition: background 0.15s ease;
+  font-family: inherit;
 }
 
 .lang-switch button:hover {
@@ -91,9 +97,11 @@ p {
   border-radius: 8px;
   padding: 0.9rem 1.6rem;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 400;
+  letter-spacing: 0.03em;
   cursor: pointer;
   transition: background 0.15s ease;
+  font-family: inherit;
 }
 
 .code-booknow-button:hover {

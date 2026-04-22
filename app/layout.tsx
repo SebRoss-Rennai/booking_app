@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Raleway } from "next/font/google";
 import "./globals.css";
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["300", "400", "600"],
+  variable: "--font-raleway",
+});
 
 export const metadata: Metadata = {
   title: "Réservation",
@@ -11,7 +18,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={raleway.variable}>
       <head>
         <Script
           id="booknowlib"
