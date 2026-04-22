@@ -52,6 +52,7 @@ h2, h3, p {
   overflow: hidden;
 }
 
+.lang-switch a,
 .lang-switch button {
   background: transparent;
   color: #fff;
@@ -63,12 +64,17 @@ h2, h3, p {
   cursor: pointer;
   transition: background 0.15s ease;
   font-family: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
 }
 
+.lang-switch a:hover,
 .lang-switch button:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
+.lang-switch a.active,
 .lang-switch button.active {
   background: #fff;
   color: #111;
