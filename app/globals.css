@@ -11,17 +11,23 @@ html, body {
   font-weight: 300;
   background: #f7f7f8;
   color: #111;
+  overflow: hidden;
 }
 
-h1, h2, h3, p {
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+h2, h3, p {
   font-weight: 300;
 }
 
 .site-header {
   background: #111;
   color: #fff;
-  padding: 1rem 1.5rem;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+  padding: 0.6rem 1.5rem;
+  flex: 0 0 auto;
 }
 
 .site-header__inner {
@@ -34,7 +40,7 @@ h1, h2, h3, p {
 }
 
 .site-header__logo {
-  height: 48px;
+  height: 36px;
   width: auto;
   object-fit: contain;
 }
@@ -50,8 +56,8 @@ h1, h2, h3, p {
   background: transparent;
   color: #fff;
   border: 0;
-  padding: 0.4rem 0.9rem;
-  font-size: 0.85rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8rem;
   font-weight: 400;
   letter-spacing: 0.04em;
   cursor: pointer;
@@ -69,49 +75,62 @@ h1, h2, h3, p {
 }
 
 main {
-  min-height: calc(100vh - 80px);
+  flex: 1 1 auto;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem 1.5rem;
   text-align: center;
+  overflow: hidden;
 }
 
 .eyebrow {
-  font-size: 0.95rem;
+  font-size: clamp(0.75rem, 1.2vw, 0.95rem);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #8a6f3b;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
   max-width: none;
+  flex: 0 0 auto;
 }
 
 .hero-image {
+  flex: 1 1 auto;
+  min-height: 0;
   width: 100%;
-  max-width: 900px;
-  margin-bottom: 2rem;
+  max-width: 760px;
+  margin-bottom: 1rem;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
 h1 {
-  font-size: 2.25rem;
-  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+  flex: 0 0 auto;
 }
 
 p {
-  font-size: 1.05rem;
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
   color: #555;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   max-width: 520px;
+  flex: 0 0 auto;
 }
 
 .code-booknow-button {
@@ -119,13 +138,14 @@ p {
   color: #fff;
   border: 0;
   border-radius: 8px;
-  padding: 0.9rem 1.6rem;
-  font-size: 1rem;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.95rem;
   font-weight: 400;
   letter-spacing: 0.03em;
   cursor: pointer;
   transition: background 0.15s ease;
   font-family: inherit;
+  flex: 0 0 auto;
 }
 
 .code-booknow-button:hover {

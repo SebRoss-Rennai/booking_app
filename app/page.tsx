@@ -100,7 +100,15 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "100%",
+              height: "100%",
+              minHeight: 0,
+            }}
           >
             <motion.p
               className="eyebrow"
