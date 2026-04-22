@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 declare global {
   interface Window {
@@ -39,17 +40,35 @@ export default function Home() {
 
   return (
     <>
-      <header className="site-header">
+      <motion.header
+        className="site-header"
+        initial={{ y: -60, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
         <div className="site-header__inner">
-          <Image
-            src="/logo.png"
-            alt="Logo"
-            width={160}
-            height={48}
-            priority
-            className="site-header__logo"
-          />
-          <div className="lang-switch" role="group" aria-label="Language">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
+            <Image
+              src="/RENNAI_BLC_FDTRANSP_RVB.png"
+              alt="Logo"
+              width={160}
+              height={48}
+              priority
+              className="site-header__logo"
+            />
+          </motion.div>
+          <motion.div
+            className="lang-switch"
+            role="group"
+            aria-label="Language"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
             <button
               type="button"
               className={lang === "fr" ? "active" : ""}
@@ -64,16 +83,47 @@ export default function Home() {
             >
               EN
             </button>
-          </div>
+          </motion.div>
         </div>
-      </header>
+      </motion.header>
 
       <main>
-        <h1>{t.title}</h1>
-        <p>{t.subtitle}</p>
-        <button className="code-booknow-button" onClick={openBooking}>
-          {t.cta}
-        </button>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={lang}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+          >
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+            >
+              {t.title}
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            >
+              {t.subtitle}
+            </motion.p>
+            <motion.button
+              className="code-booknow-button"
+              onClick={openBooking}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.35, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              {t.cta}
+            </motion.button>
+          </motion.div>
+        </AnimatePresence>
       </main>
     </>
   );
