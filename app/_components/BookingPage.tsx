@@ -30,9 +30,9 @@ const COPY: Record<
   },
   en: {
     eyebrow: "Rennaï réserve presents Summer Glow",
-    title: "Book your appointment",
-    subtitle: "Click the button below to open the booking tool.",
-    cta: "Book Now",
+    title: "Kindly confirm your presence",
+    subtitle: "Access the booking experience below.",
+    cta: "RSVP",
   },
 };
 
